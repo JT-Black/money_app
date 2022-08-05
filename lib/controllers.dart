@@ -1,14 +1,16 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'dart:core';
 
 class BalanceController extends GetxController {
-  final balance = 100.obs;
+  var balance = 100.01.obs;
+  // var balance = num.parse(balance.toStringAsFixed(2)).obs;
   var paymentAmount = 0.obs;
   final transactions = [
     {
       'type': 'topup',
       'description': 'topup',
-      'amount': 100,
+      'amount': 100.01,
     },
   ].obs;
 
@@ -20,7 +22,7 @@ class BalanceController extends GetxController {
         'amount': text,
       },
     );
-    balance + int.parse(text);
+    balance + double.parse(text);
   }
 
   addPayment(amount, payee) {

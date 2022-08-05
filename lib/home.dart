@@ -63,13 +63,15 @@ class Home extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          Obx(() => Text(
-                '£${bal.balance}',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 45,
-                ),
-              )),
+          Obx(
+            () => Text(
+              '£${bal.balance.toStringAsFixed(2)}',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 45,
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
