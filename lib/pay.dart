@@ -33,57 +33,59 @@ class _PayState extends State<Pay> {
         title: const Text('MoneyApp'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            const Text(
-              'How much?',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 40,
               ),
-            ),
-            const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  '£ ',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+              const Text(
+                'How much?',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
                 ),
-                Text(
-                  text,
-                  style: const TextStyle(color: Colors.white, fontSize: 25),
+              ),
+              const SizedBox(height: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    '£ ',
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  Text(
+                    text,
+                    style: const TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                ],
+              ),
+              NumericKeyboard(
+                onKeyboardTap: _onKeyboardTap,
+                textColor: Colors.white,
+                rightButtonFn: () {
+                  setState(() {
+                    text = text.substring(0, text.length - 1);
+                  });
+                },
+                rightIcon: const Icon(
+                  Icons.backspace,
+                  color: Colors.white,
                 ),
-              ],
-            ),
-            NumericKeyboard(
-              onKeyboardTap: _onKeyboardTap,
-              textColor: Colors.white,
-              rightButtonFn: () {
-                setState(() {
-                  text = text.substring(0, text.length - 1);
-                });
-              },
-              rightIcon: const Icon(
-                Icons.backspace,
-                color: Colors.white,
               ),
-            ),
-            ElevatedButton(
-              onPressed: () => {
-                bal.paymentAmount.value = int.parse(text),
-                Navigator.of(context).push(_whoRoute())
-              },
-              child: const Text(
-                'Next',
-                style: TextStyle(color: Colors.white),
+              ElevatedButton(
+                onPressed: () => {
+                  bal.paymentAmount.value = double.parse(text),
+                  Navigator.of(context).push(_whoRoute())
+                },
+                child: const Text(
+                  'Next',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

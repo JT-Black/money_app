@@ -39,41 +39,43 @@ class _WhoState extends State<Who> {
         title: const Text('MoneyApp'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 50,
-            ),
-            const Text(
-              'To Who?',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                    controller: myController,
-                    autofocus: true,
-                    decoration: const InputDecoration(
-                      hintText: 'Enter Payee',
-                      border: OutlineInputBorder(),
-                    ),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                    )),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 50,
               ),
-            ),
-            ElevatedButton(
-              onPressed: () => {
-                bal.addPayment(bal.paymentAmount.value, myController.text),
-                FocusManager.instance.primaryFocus?.unfocus(),
-                Navigator.of(context).push(homeRoute())
-              },
-              child: const Text('Pay'),
-            ),
-          ],
+              const Text(
+                'To Who?',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                      controller: myController,
+                      autofocus: true,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter Payee',
+                        border: OutlineInputBorder(),
+                      ),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      )),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () => {
+                  bal.addPayment(bal.paymentAmount.value, myController.text),
+                  FocusManager.instance.primaryFocus?.unfocus(),
+                  Navigator.of(context).push(homeRoute())
+                },
+                child: const Text('Pay'),
+              ),
+            ],
+          ),
         ),
       ),
     );

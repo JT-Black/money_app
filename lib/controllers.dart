@@ -4,8 +4,7 @@ import 'dart:core';
 
 class BalanceController extends GetxController {
   var balance = 100.01.obs;
-  // var balance = num.parse(balance.toStringAsFixed(2)).obs;
-  var paymentAmount = 0.obs;
+  var paymentAmount = 0.00.obs;
   final transactions = [
     {
       'type': 'topup',
@@ -15,6 +14,7 @@ class BalanceController extends GetxController {
   ].obs;
 
   addTopup(text) {
+    text = double.parse(text).toStringAsFixed(2);
     transactions.add(
       {
         'type': 'topup',
@@ -25,14 +25,16 @@ class BalanceController extends GetxController {
     balance + double.parse(text);
   }
 
-  addPayment(amount, payee) {
+  addPayment(text, payee) {
+    // double.parse(text).toStringAsFixed(2);
     transactions.add(
       {
         'type': const Icon(Icons.shopping_bag_rounded),
         'description': payee,
-        'amount': amount,
+        'amount': text,
       },
     );
-    balance - amount;
+
+    balance - text;
   }
 }
