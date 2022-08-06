@@ -7,6 +7,11 @@
 - Top-up your account
 
 <p style="text-align:center">
+
+https://user-images.githubusercontent.com/87031124/183260367-52ffcd41-2bb7-49f0-8d9f-0a76e43f8d32.mp4
+
+</p>
+<p style="text-align:center">
   <img  src="img/home_money_app.png">
 </p>
 <p style="text-align:center">
@@ -14,11 +19,6 @@
 </p>
 <p style="text-align:center">
   <img src="img/recipient_money_app.png">
-</p>
-<p style="text-align:center">
-
-https://user-images.githubusercontent.com/87031124/183260367-52ffcd41-2bb7-49f0-8d9f-0a76e43f8d32.mp4
-
 </p>
 
 
