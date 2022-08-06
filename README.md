@@ -6,3 +6,17 @@
 - Pay someone
 - Top-up your account
 
+<p style="text-align:center">
+  <img  src="img/home_money_app.png">
+</p>
+<p style="text-align:center">
+  <img src="img/pay_money_app.png">
+</p>
+<p style="text-align:center">
+  <img src="img/recipient_money_app.png">
+</p>
+<p style="text-align:center">
+
+!['MoneyApp'](img/money_app.mp4)
+
+</p>
